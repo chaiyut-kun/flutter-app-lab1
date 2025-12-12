@@ -81,38 +81,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(2),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 8,
+                  ClipRRect(
+                    borderRadius  : BorderRadius.circular(50.0),
+                    child: Image.network(
+                    'https://avatars.githubusercontent.com/u/135094423?v=4',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
+                  ),
+                  ),
+                  Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 8,
+                  children: [
+                    const Icon(FontAwesomeIcons.github, ),
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                       children: [
-                        const Icon(FontAwesomeIcons.github),
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(color: Colors.black, fontSize: 16),
-                            children: [
-                              TextSpan(
-                                text: "GitHub:  chaiyut-kun",
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    launchUrl(
-                                      Uri.parse(
-                                        "https://github.com/chaiyut-kun",
-                                      ),
-                                      mode: LaunchMode.externalApplication,
-                                    );
-                                  },
-                              ),
-                            ],
-                          ),
+                        TextSpan(
+                          text: "GitHub:  chaiyut-kun",
+                          style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              launchUrl(
+                                Uri.parse("https://github.com/chaiyut-kun"),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
                         ),
-                      ],
+                      ]
+                    )
                     ),
-                  ],
-                ),
+                    ],
+                  ),
+                      ],
+                    )
               ),
               const Icon(Icons.confirmation_number, size: 40),
               const Text('663450037-1'),
