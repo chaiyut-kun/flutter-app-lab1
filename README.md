@@ -1,16 +1,9 @@
-# flutter_application_1
-
-A new Flutter project.
-
+# flutter app Lab 1
+flutter app จาก lab 1 ในรายวิชา Native Mobile Application Programming IN403105 ปีการศึกษา 2568
+โดยเนื้อหานี้จะเป็นเนื้อหาเกี่ยวกับ profile ของผู้เรียน
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ผู้เรียนได้ใช้ ระบบปฎิบัติการ Linux (ขออนุญาตไม่ระบุ distribution) ในการพัฒนาโปรเจ็คนี้ขึ้น
+**เริ่มต้นรัน App (ด้วย terminal)**
+```bash
+flutter run
+```
