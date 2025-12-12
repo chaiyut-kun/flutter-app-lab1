@@ -81,51 +81,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(2),
                 child: Column(
                   children: [
-                  ClipRRect(
-                    borderRadius  : BorderRadius.circular(30.0),
-                    child: Image.file(File("assets/images/me-sigma.jpg"),
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                    ),
-                  ),
-
-                  Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 8,
-                  children: [
-                    const Icon(FontAwesomeIcons.github, ),
-                  RichText(
-                    text: TextSpan(
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 8,
                       children: [
-                        TextSpan(
-                          text: "GitHub:  chaiyut-kun",
-                          style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              launchUrl(
-                                Uri.parse("https://github.com/chaiyut-kun"),
-                                mode: LaunchMode.externalApplication,
-                              );
-                            },
+                        const Icon(FontAwesomeIcons.github),
+                        RichText(
+                          text: TextSpan(
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            children: [
+                              TextSpan(
+                                text: "GitHub:  chaiyut-kun",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  decoration: TextDecoration.underline,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    launchUrl(
+                                      Uri.parse(
+                                        "https://github.com/chaiyut-kun",
+                                      ),
+                                      mode: LaunchMode.externalApplication,
+                                    );
+                                  },
+                              ),
+                            ],
+                          ),
                         ),
-                      ]
-                    )
-                    ),
-                    ],
-                  ),
-                  ClipRRect(
-                    borderRadius  : BorderRadius.circular(50.0),
-                    child: Image.network(
-                    'https://github.com/chaiyut-kun.png',
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  ),
                       ],
-                    )
+                    ),
+                  ],
+                ),
               ),
               const Icon(Icons.confirmation_number, size: 40),
               const Text('663450037-1'),
