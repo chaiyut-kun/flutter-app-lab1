@@ -1,4 +1,10 @@
+import 'dart:io';
+import 'dart:math';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,22 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Card(
           elevation: 8,
-          margin: const EdgeInsets.all(32.0),
+          margin: const EdgeInsets.all(26.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ClipRRect(
-                borderRadius  : BorderRadius.circular(50.0),
-                child: Image.network(
-                'https://github.com/chaiyut-kun.png',
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
-              ),
-              ),
-              const Text('chaiyut-kun'),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -80,6 +76,56 @@ class _MyHomePageState extends State<MyHomePage> {
                     const Text('Chaiyut Tavon'),
                   ],
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2),
+                child: Column(
+                  children: [
+                  ClipRRect(
+                    borderRadius  : BorderRadius.circular(30.0),
+                    child: Image.file(File("assets/images/me-sigma.jpg"),
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                    ),
+                  ),
+
+                  Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 8,
+                  children: [
+                    const Icon(FontAwesomeIcons.github, ),
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                      children: [
+                        TextSpan(
+                          text: "GitHub:  chaiyut-kun",
+                          style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              launchUrl(
+                                Uri.parse("https://github.com/chaiyut-kun"),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
+                        ),
+                      ]
+                    )
+                    ),
+                    ],
+                  ),
+                  ClipRRect(
+                    borderRadius  : BorderRadius.circular(50.0),
+                    child: Image.network(
+                    'https://github.com/chaiyut-kun.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  ),
+                      ],
+                    )
               ),
               const Icon(Icons.confirmation_number, size: 40),
               const Text('663450037-1'),
